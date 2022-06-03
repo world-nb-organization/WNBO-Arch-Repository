@@ -18,3 +18,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag arch-aur:$(date +%s)
+    - uses: actions/checkout@v3
+    - name: build aur packages
+      run: docker -v /:/aur run  arch-aur:$(date +%s)
+    
