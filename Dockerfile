@@ -1,6 +1,5 @@
 FROM archlinux:latest
-RUN echo 'Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist &&\ 
-pacman -Syyuu --noconfirm &&\
+RUN pacman -Syyuu --noconfirm &&\
 pacman -S base-devel linux-headers git vim sudo --noconfirm &&\
 mkdir /aur
 RUN echo 'archlive:$6$xGBSPctIakBmXtcF$AK45.AHbiNMaWOJKjmaBSCpkkiLIoizgd4iSqLOqSf6OOouznQABwJVFBg9kyQCK04Eye0njyvVW/7kTc.JCw/:19130:0:99999:7:::' >> /etc/shadow &&\
